@@ -1,7 +1,8 @@
 var mapboxKey = 'pk.eyJ1IjoiZ3NjcGxhbm5pbmciLCJhIjoiRVZMNXpsQSJ9.5OxUlJTCDplPkdkKNlB91A';
 
 var map = L.map('map', {
-    attributionControl: false
+    attributionControl: false,
+    maxZoom: 20
 })
     .setView([38.054772, -84.483393], 17);
 
@@ -12,7 +13,9 @@ var base = new L.tileLayer.grayscale('http://api.tiles.mapbox.com/v4/{id}/{z}/{x
     subdomains: 'abcd',
     id: 'lexhousingstudies.ombga57e',
     accessToken: mapboxKey,
-    quotaDividerTune: 9
+    quotaDividerTune: 9,
+    maxNativeZoom: 18,
+    maxZoom: 20
 }).addTo(map);
 
 var grapi;
@@ -102,3 +105,6 @@ legend.onAdd = function (map) {
 	return div;
 };
 legend.addTo(map);
+
+L.marker([38.055303, -84.481985]).addTo(map)
+    .bindPopup('Shipping Container Property');
