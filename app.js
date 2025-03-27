@@ -1,5 +1,3 @@
-var mapboxKey = 'pk.eyJ1IjoiZ3NjcGxhbm5pbmciLCJhIjoiRVZMNXpsQSJ9.5OxUlJTCDplPkdkKNlB91A';
-
 var map = L.map('map', {
     attributionControl: false,
     maxZoom: 20
@@ -8,14 +6,8 @@ var map = L.map('map', {
 
 L.control.attribution().addAttribution("<a href='http://www.zillow.com/' target='_blank'>Zillow.com</a>").addTo(map);
 
-var base = new L.tileLayer.grayscale('http://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-    attribution: 'Imagery from <a href="http://mapbox.com/about/maps/">MapBox</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-    subdomains: 'abcd',
-    id: 'lexhousingstudies.ombga57e',
-    accessToken: mapboxKey,
-    quotaDividerTune: 9,
-    maxNativeZoom: 18,
-    maxZoom: 20
+var base = new L.tileLayer.grayscale('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
 }).addTo(map);
 
 var grapi;
